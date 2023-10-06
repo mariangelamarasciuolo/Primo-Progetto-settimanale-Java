@@ -10,12 +10,25 @@ public class Video extends MultimedialElement implements Brightness, Volume {
         this.duration = duration;
     }
 
+    public void play() {
+        String PuntiEsclamativi = "";
+        for (int i = 0; i < volume; i++) {
+            PuntiEsclamativi += "!";
+        }
+        String Asterischi = "";
+        for (int i = 0; i < brightness; i++) {
+            Asterischi += "*";
+        }
+        for (int i = 0; i < duration; i++) {
+            System.out.println(title + " Volume: " + PuntiEsclamativi + " Brightness: " + Asterischi);
+        }
+    }
 
     @Override
     public void upBright() {
         if (brightness < maxBright) {
             brightness++;
-            System.out.println("Bright:" + brightness);
+            System.out.println("BrightUp: " + brightness);
         } else {
             System.out.println("Max Brightness");
         }
@@ -25,7 +38,7 @@ public class Video extends MultimedialElement implements Brightness, Volume {
     public void downBright() {
         if (brightness > minBright) {
             brightness--;
-            System.out.println("Bright:" + brightness);
+            System.out.println("BrightDown: " + brightness);
         } else {
             System.out.println("Min Brightness");
         }
@@ -35,7 +48,7 @@ public class Video extends MultimedialElement implements Brightness, Volume {
     public void volumeUP() {
         if (volume < maxVolume) {
             volume++;
-            System.out.println("Volume" + volume);
+            System.out.println("VolumeUp: " + volume);
         } else {
             System.out.println("Volume Max");
         }
@@ -43,9 +56,9 @@ public class Video extends MultimedialElement implements Brightness, Volume {
 
     @Override
     public void volumeDown() {
-        if (volume > maxVolume) {
+        if (volume > minVolume) {
             volume--;
-            System.out.println("Volume" + volume);
+            System.out.println("VolumeDown: " + volume);
         } else {
             System.out.println("Volume Min");
         }

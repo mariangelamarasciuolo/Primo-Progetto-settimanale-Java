@@ -2,22 +2,33 @@ package entities;
 
 public class Main {
     public static void main(String[] args) {
-        Audio testAudio = new Audio("test audio", 4);
+
+        Audio testAudio = new Audio("test audio", 1);
         System.out.println("Static Volume Audio: " + Audio.volume);
         testAudio.volumeUP();
         testAudio.volumeDown();
 
-        Image testBright = new Image("test image");
+        System.out.println(testAudio);
+        testAudio.play();
+///////////////////////////////////////////////////////////////////
+        Image testImage = new Image("test image");
         System.out.println("Static Brightness Image: " + Image.brightness);
-        testBright.upBright();
-        testBright.downBright();
+        testImage.upBright();
+        testImage.downBright();
 
-        Video testVideo = new Video("test video", 4);
+        System.out.println(testImage);
+        testImage.show();
+        /////////////////////////////////////////////////////////////////////////
+        Video testVideo = new Video("test video", 1);
         System.out.println("Static Volume Video: " + Video.volume);
         testVideo.volumeUP();
         testVideo.volumeDown();
         System.out.println("Static Brightness Video: " + Video.brightness);
-        testBright.upBright();
-        testBright.downBright();
+        testVideo.upBright();
+        testVideo.downBright();
+
+
+        System.out.println(testVideo);
+        testVideo.play();
     }
 }
