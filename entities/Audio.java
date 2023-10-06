@@ -21,7 +21,7 @@ public class Audio extends MultimedialElement implements Volume {
 
     @Override
     public void volumeDown() {
-        if (volume > maxVolume) {
+        if (volume > minVolume) {
             volume--;
             System.out.println("Volume" + volume);
         } else {
